@@ -55,7 +55,7 @@
                                                 <button id="accedi" type="submit" class="btn btn-default">Accedi</button>
                                             </div>
                                         </div>
-                                        <c:if test = "${userData.valid == false}">
+                                        <c:if test = "${webAdminSession.valid == false}">
                                             <div class ="row">
                                                 <div class="col-sm-2">
                                                 </div>

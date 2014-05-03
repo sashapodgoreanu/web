@@ -65,9 +65,10 @@ public class WebAdmin {
     }
 
     public boolean authenticate() {
-
+    
         try {
             valid = DBController.verificaUtente(this);
+            System.out.println(this.toString());
             if (valid) {
                 java.util.Date date = new java.util.Date();
                 String updateLastAccessQuerry = "UPDATE WEB_ADMIN "
@@ -96,8 +97,10 @@ public class WebAdmin {
 
     @Override
     public String toString() {
-        return "WebAdmin{" + "nome=" + nome + ", password=" + password + ", login=" + login + '}';
+        return "WebAdmin{" + "nome=" + nome + ", password=" + password + ", login=" + login + ", valid=" + valid + ", lastOnline=" + lastOnline + '}';
     }
+
+    
 
     public void cleanUp() {
         System.out.println("Cleaning up" + this.toString());

@@ -36,7 +36,6 @@ public class LoginController {
         webAdmin.authenticate();
         session.setAttribute("webAdminSession", webAdmin);
         ModelAndView mav = new ModelAndView("redirect:/login/");
-        System.out.println(webAdmin.toString());
         return mav;
     }
     

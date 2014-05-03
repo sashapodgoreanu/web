@@ -17,6 +17,22 @@ public class DBController {
     private static Connection conn;
     private static Statement st;
     private static ResultSet rs;
+    private static DBController instance;
+
+    private DBController() {
+        try {
+            registerDB();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    public static DBController getInstance() {
+        if (instance == null) {
+            instance = new DBController();
+        }
+        return instance;
+    }
 
     public static void registerDB() throws SQLException {
         try {
@@ -106,7 +122,7 @@ public class DBController {
 
     public static boolean execute(String querry) throws SQLException {
         connect();
-         System.out.println("Querry");
+        System.out.println("Querry");
         int result = 0;
         try {
             result = st.executeUpdate(querry);
@@ -140,7 +156,6 @@ public class DBController {
             disconnect();
         }
         return result;
-    } 
-    
+    }
 
 }

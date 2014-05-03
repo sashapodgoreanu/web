@@ -31,7 +31,7 @@ public class PageController {
     com.service.DBClasses Service;*/
 
     
-    @RequestMapping(value = {"/index/"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"index/"}, method = RequestMethod.GET)
     public ModelAndView wellcome(HttpSession session) {
         String h = "Heloooo";
         session.setAttribute("heloString",h);
@@ -42,19 +42,19 @@ public class PageController {
         return mav;
     }
     
-    @RequestMapping(value = {"/note-legali/"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"note-legali/"}, method = RequestMethod.GET)
     public ModelAndView noteLegali() {
         ModelAndView mav = new ModelAndView("noteLegali");//add view - noteLegali.jsp  
         return mav;
     }
     
-    @RequestMapping(value = {"/azienda/"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"azienda/"}, method = RequestMethod.GET)
     public ModelAndView azienda() {
         ModelAndView mav = new ModelAndView("noteLegali");//add view - noteLegali.jsp  
         return mav;
     }
    
-    @RequestMapping(value = "/insertJdbcContact/", method = RequestMethod.GET)
+    @RequestMapping(value = "insertJdbcContact/", method = RequestMethod.GET)
     public ModelAndView insertContact() {
         ModelAndView mav = new ModelAndView("insertDataPage");
         //Dati bean = new Dati(); // crea il bean per la pagina insertJdbcContact
@@ -63,7 +63,7 @@ public class PageController {
         return mav;
     }
     
-    @RequestMapping(value = {"/viewData/"}, method = {RequestMethod.POST, RequestMethod.GET})
+    @RequestMapping(value = {"viewData/"}, method = {RequestMethod.POST, RequestMethod.GET})
     public ModelAndView viewDataPost(
             //@ModelAttribute("insertUser") Dati userData
             ) {
@@ -80,17 +80,17 @@ public class PageController {
    
     @RequestMapping(value = {"index","/"}, method = {RequestMethod.GET})
     public String redirectIngHome(){
-        return "redirect:/index/";
+        return "redirect:index/";
     }
     
     @RequestMapping(value = {"azienda"}, method = {RequestMethod.GET})
     public String redirectAzienda(){
-        return "redirect:/azienda/";
+        return "redirect:azienda/";
     }
     
     @RequestMapping(value = {"note-legali"}, method = {RequestMethod.GET})
     public String redirectNotelegali(){
-        return "redirect:/note-legali/";
+        return "redirect:note-legali/";
     }
 /* NON USATO...
      * 
